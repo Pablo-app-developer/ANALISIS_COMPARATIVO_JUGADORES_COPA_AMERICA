@@ -1,0 +1,65 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN6c+yXl3KpwOWxr+0U5iWQ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Pablo-app-developer/ANALISIS_COMPARATIVO_JUGADORES_COPA_AMERICA/blob/Analisis.py/calculadora%20para%20tama%C3%B1o%20de%20poblaci%C3%B3n\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bKU3ZnjUZ_qU",
+        "outputId": "abdbec8e-ca1b-402c-8c1f-29132ae86e2f"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "El tamaño de muestra requerido es: 264\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Cálculo del tamaño de muestra para una población finita\n",
+        "\n",
+        "# Definir los parámetros\n",
+        "Z = 1.65  # Nivel de confianza (1.65 para 90% 1.96 para 95%, 2.58 para 99%)\n",
+        "p = 0.5   # Proporción esperada de defectos (0.5 para máxima variabilidad)\n",
+        "E = 0.05  # Margen de error permitido (por ejemplo, 5% = 0.05)\n",
+        "N = 8825  # Tamaño de la población (total de unidades en el proceso)\n",
+        "\n",
+        "# Cálculo del tamaño de muestra\n",
+        "n = (Z**2 * p * (1 - p)) / (E**2 + (Z**2 * p * (1 - p)) / N)\n",
+        "\n",
+        "# Mostrar el tamaño de muestra calculado\n",
+        "print(f\"El tamaño de muestra requerido es: {round(n)}\")\n"
+      ]
+    }
+  ]
+}
